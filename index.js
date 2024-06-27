@@ -15,8 +15,8 @@ app.use(express.json()); // Parse request body as JSON
 
 // Connect to MongoDB
 mongoose.connect(process.env.URL, {
-//   useNewUrlParser: true,
-//   useUnifiedTopology: true,
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
 });
 
 // User schema
