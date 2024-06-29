@@ -42,10 +42,10 @@ app.post('/signup', async (req, res) => {
     const { name, email, password } = req.body;
 
     // Check if user already exists
-    const existingUser = await User.findOne({ email });
-    if (existingUser) {
-      return res.status(400).json({ error: 'User already exists' });
-    }
+    // const existingUser = await User.findOne({ email });
+    // if (existingUser) {
+    //   return res.status(400).json({ error: 'User already exists' });
+    // }
 
     // Hash the password
     const saltRounds = 10; // Number of salt rounds for hashing
