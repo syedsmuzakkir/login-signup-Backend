@@ -13,6 +13,18 @@ const app = express();
 app.use(express.json()); // Parse request body as JSON
 
 
+
+const cron = require('node-cron');
+
+// Define your task (this is a sample task)
+const task = () => {
+    console.log('Running cron job...');
+    // Place your logic here that you want to run continuously
+};
+
+// Schedule the task to run every minute
+cron.schedule('* * * * *', task);
+
 // Connect to MongoDB
 // mongoose.connect(process.env.URL, {
 //   useNewUrlParser: true,
