@@ -14,9 +14,15 @@ app.use(express.json()); // Parse request body as JSON
 
 
 // Connect to MongoDB
+// mongoose.connect(process.env.URL, {
+//   useNewUrlParser: true,
+//   useUnifiedTopology: true,
+// });
+
 mongoose.connect(process.env.URL, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
+  serverSelectionTimeoutMS: 60000, // 60 seconds
 });
 
 // User schema
