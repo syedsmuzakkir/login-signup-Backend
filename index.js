@@ -123,8 +123,7 @@ app.post('/forgot-password', async (req, res) => {
         auth: {
           user: process.env.Email,
           pass: process.env.Password,
-        //   ', // Replace with your Gmail password
-        //   dlzk apzq vkkz yjid,
+       
         },
       });
   
@@ -187,6 +186,12 @@ app.post('/reset-password/:token', async (req, res) => {
   });
   
   
-app.listen(3000, () => {
-  console.log('Server started on port 3000');
+// app.listen(3000, () => {
+//   console.log('Server started on port 3000');
+// });
+
+
+const port = process.env.PORT || 4000;
+app.listen(port, () => {
+  console.log(`Server started on port ${port}`);
 });
