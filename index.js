@@ -10,9 +10,18 @@ const crypto = require('crypto');
 const { google } = require('googleapis');
 const OAuth2 = google.auth.OAuth2;
 const app = express();
+const cors = require('cors');
 app.use(express.json()); // Parse request body as JSON
 
 
+app.use(cors());
+
+// app.use(cors({
+//   origin: 'https://example.com',
+//   methods: ['GET', 'POST', 'PUT', 'DELETE'],
+//   allowedHeaders: ['Content-Type', 'Authorization'],
+//   credentials: true
+// }));
 
 const cron = require('node-cron');
 
