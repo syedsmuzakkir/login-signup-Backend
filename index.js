@@ -158,7 +158,7 @@ app.post('/forgot-password', async (req, res) => {
         from: process.env.Email,
         to: email,
         subject: 'Reset your password',
-        text: `You are receiving this email because you want to reset your password. Please click on the following link, or paste this into your browser to complete the process: http://localhost:3000/reset-password/${resetPasswordToken}\n\nIf you did not request this, please ignore this email and your password will remain unchanged.`,
+        text: `You are receiving this email because you want to reset your password. Please click on the following link, or paste this into your browser to complete the process: https://portfolio-website-vvqf.vercel.app/reset-password/${resetPasswordToken}\n\nIf you did not request this, please ignore this email and your password will remain unchanged.`,
       };
   
       transporter.sendMail(mailOptions, (error, info) => {
